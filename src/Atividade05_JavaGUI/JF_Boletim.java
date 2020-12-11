@@ -175,10 +175,24 @@ public class JF_Boletim extends javax.swing.JFrame {
 
     private void btn_CalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CalcularActionPerformed
         // TODO add your handling code here:
-        String nota1 = txt_Nota1.getText();
-        String nota2 = txt_Nota2.getText();
-        String nota3 = txt_Nota3.getText();
-        float media = 0;
+        String nota = txt_Nota1.getText();
+        nota=nota.replace(",", ".");
+        double nota1 = Double.parseDouble(nota);
+   
+        String aux = txt_Nota2.getText();
+        aux=aux.replace(",", ".");
+        double nota2 = Double.parseDouble(aux);
+        
+        String notaa = txt_Nota3.getText();
+        notaa=notaa.replace(",", ".");
+        double nota3 = Double.parseDouble(notaa);
+        
+        double media = 0;
+        
+        //Fazendo calculo
+        media=(nota1+nota2+nota3)/3;
+        String str= Double.toString(media);
+        lbl_Resultado.setText(str);
         
     }//GEN-LAST:event_btn_CalcularActionPerformed
 
